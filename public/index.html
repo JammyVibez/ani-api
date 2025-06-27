@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Julius-Anime-API</title>
+
+    <style>
+      /* Basic styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        font-size: 14px; /* Reduced font size */
+        line-height: 1.6; /* Increased line height for better readability */
+      }
+
+      header {
+        text-align: center;
+        padding: 50px;
+        background-color: #2c3e50;
+        color: #fff;
+      }
+
+      header h1 {
+        font-size: 3em; /* Smaller header font size */
+        margin: 0;
+      }
+
+      header p {
+        font-size: 1.2em;
+        color: #ecf0f1;
+      }
+
+      main {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 20px auto;
+      }
+
+      .main-content h2 {
+        font-size: 1.8em; /* Reduced size */
+        color: #34495e;
+      }
+
+      .main-content p {
+        font-size: 1.1em;
+        color: #7f8c8d;
+      }
+
+      footer {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 10px;
+        text-align: center;
+      }
+
+      /* Routes section style */
+      .routes {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: left;
+        overflow-wrap: break-word; /* Prevent text overflow */
+      }
+
+      .routes h3 {
+        font-size: 1.4em; /* Reduced size */
+        color: #34495e;
+      }
+
+      .routes ul {
+        list-style-type: none;
+        padding: 0;
+        font-size: 0.9em; /* Smaller font size for list items */
+        line-height: 1.5; /* Improved line height */
+      }
+
+      .routes li {
+        color: #7f8c8d;
+        margin-bottom: 8px; /* Adjusted margin for better spacing */
+      }
+
+      /* Ensures text doesn't overflow container */
+      .routes li,
+      .main-content p,
+      .routes h3 {
+        word-wrap: break-word;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Julius-Anime-API</h1>
+      <p>Your gateway to anime data</p>
+    </header>
+
+    <main>
+      <div class="main-content">
+        <h2>Anime API that brings your favorite anime to life!</h2>
+        <p>
+          Explore anime categories, top lists, schedule, and more with just a
+          few clicks.
+        </p>
+      </div>
+
+      <!-- Routes Section -->
+      <div class="routes">
+        <h3>Available Routes:</h3>
+        <ul>
+          <li><strong>/spotlight</strong> - Spotlight anime</li>
+          <li><strong>/trending</strong> - Trending anime</li>
+          <li><strong>/top-10</strong> - Top 10 anime</li>
+          <li><strong>/genres</strong> - List of genres</li>
+          <li><strong>/genre/:genre</strong> - Get anime by genre</li>
+          <li>
+            <strong>/estimated-schedule</strong> - Estimated anime schedule
+          </li>
+          <li><strong>/producer/:producer</strong> - Get anime by producer</li>
+          <li>
+            <strong>/episode-servers</strong> - Episode servers (e.g.,
+            `/episode-servers?episodeId=dandadan-19319?ep=128656`)
+          </li>
+          <li>
+            <strong>/episode-srcs</strong> - Episode sources (e.g.,
+            `/episode-srcs?id=dandadan-19319&ep=128549&category=sub&server=vidstreaming`)
+          </li>
+          <li>
+            <strong>/hls-proxy</strong> - HLS proxy for Gogoanime (e.g.,
+            `/hls-proxy?url=https://www110.anzeat.pro/streamhls/156eaab7f95a98a9d12644f457a04f9c/ep.1.1728164109.m3u8`)
+          </li>
+          <li>
+            <strong>/quality-proxy</strong> - Default quality proxy for
+            Gogoanime
+          </li>
+          <li>
+            <strong>/segment-proxy</strong> - Segment proxy for quality proxy
+          </li>
+          <li>
+            <strong>/hianime-hls-proxy</strong> - HLS proxy for HiAnime (e.g.,
+            `/hianime-hls-proxy?url=https://ea.netmagcdn.com:2228/hls-playback/b712013e859a1edd96e17ed28d761c17dbb82de2ce8f9e1e7f63f61c4bef63430715916f48931ef9e459e3c1cee6998d11d0e09babace509710d6c17c027dd9327358244439f9bdeaa456a5c8c2cfb31f35f22d21b325afaf5d213edf16e2254bdaa915b515761fa3375f956a4a07927dc2bc10cce8183a216864172f9d5f98d4ed207ee20384f40e8bd7c82d9f52d85/master.m3u8`)
+          </li>
+          <li>
+            <strong>/hianime-quality-proxy</strong> - Default quality proxy for
+            HiAnime
+          </li>
+          <li>
+            <strong>/hianime-segment-proxy</strong> - Segment proxy for quality
+            proxy for HiAnime
+          </li>
+          <li><strong>/thumbnails-proxy</strong> - Thumbnails URL proxy</li>
+          <li><strong>/webvtt-proxy</strong> - WEBVTT proxy</li>
+          <li>
+            <strong>/search</strong> - Search anime (e.g.,
+            `/search?keyword=one%20piece`)
+          </li>
+          <li><strong>/:category</strong> - Get anime by category</li>
+          <li><strong>/az-list/:letter</strong> - AZ list by letter</li>
+          <li>
+            <strong>/info/:infoId</strong> - Get information about anime (e.g.,
+            `/info/dandadan-19319`)
+          </li>
+          <li><strong>/related/:infoId</strong> - Get related anime</li>
+          <li><strong>/recommended/:infoId</strong> - Get recommended anime</li>
+          <li>
+            <strong>/episodes/:infoId</strong> - Get episodes for an anime
+          </li>
+          <li><strong>/seasons/:infoId</strong> - Get seasons for an anime</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Julius-Anime-API | All Rights Reserved</p>
+    </footer>
+  </body>
+</html>
