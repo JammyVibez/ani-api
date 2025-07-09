@@ -1,3 +1,11 @@
-import cors from 'cors';
-const origin = ['https://mochitv.netlify.app', 'http://localhost:5173', 'http://localhost:8081'];
-export const corsConfig = cors({ origin })
+import cors from "cors";
+
+const origin = [
+  "http://localhost:3000" // ✅ add this
+];
+
+export const corsConfig = cors({
+  origin,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+});
